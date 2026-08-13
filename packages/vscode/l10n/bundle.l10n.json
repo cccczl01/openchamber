@@ -1,0 +1,23 @@
+{
+  "NoatinWork: Failed to open sidebar - {0}": "NoatinWork: Failed to open sidebar - {0}",
+  "NoatinWork: Chat sidebar is not ready": "NoatinWork: Chat sidebar is not ready",
+  "NoatinWork: No active session": "NoatinWork: No active session",
+  "NoatinWork: API connection restarted": "NoatinWork: API connection restarted",
+  "NoatinWork: Failed to restart API - {0}": "NoatinWork: Failed to restart API - {0}",
+  "NoatinWork [Add to Context]: No active editor": "NoatinWork [Add to Context]: No active editor",
+  "NoatinWork [Add to Context]: No text selected": "NoatinWork [Add to Context]: No text selected",
+  "NoatinWork: No file selected to mention": "NoatinWork: No file selected to mention",
+  "NoatinWork: Some selected entries were skipped (folders or unsupported resources)": "NoatinWork: Some selected entries were skipped (folders or unsupported resources)",
+  "NoatinWork [Explain]: No active editor": "NoatinWork [Explain]: No active editor",
+  "Explain the following Code / Text:": "Explain the following Code / Text:",
+  "NoatinWork [Improve Code]: No active editor": "NoatinWork [Improve Code]: No active editor",
+  "NoatinWork [Improve Code]: No text selected": "NoatinWork [Improve Code]: No text selected",
+  "Improve the following Code:": "Improve the following Code:",
+  "OpenCode CLI not found. Install it and ensure it's in PATH.": "OpenCode CLI not found. Install it and ensure it's in PATH.",
+  "OpenCode CLI not found. Please install it and ensure it's in PATH.": "OpenCode CLI not found. Please install it and ensure it's in PATH.",
+  "More Info": "More Info",
+  "Failed to start OpenCode: {0}": "Failed to start OpenCode: {0}",
+  "New Session": "New Session",
+  "Session": "Session",
+  "Agent Manager": "Agent Manager"
+}

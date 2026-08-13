@@ -1,0 +1,6 @@
+rebrand.db-shm
+rebrand.db-wal
+rebrand.db.bak.*
+dry-run-*.diff
+
+rebrand.db-wal

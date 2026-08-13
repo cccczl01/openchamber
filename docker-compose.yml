@@ -1,0 +1,33 @@
+services:
+  noatinwork:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: noatinwork
+    ports:
+      - "3000:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data/noatinwork:/home/noatinwork/.config/noatinwork
+      - ./data/opencode/share:/home/noatinwork/.local/share/opencode
+      - ./data/opencode/state:/home/noatinwork/.local/state/opencode
+      - ./data/opencode/config:/home/noatinwork/.config/opencode
+      - ./data/ssh:/home/noatinwork/.ssh
+      - ./workspaces:/home/noatinwork/workspaces
+    environment:
+      # Docker binds NoatinWork to 0.0.0.0 for port mapping, so UI auth is required.
+      # Set this before starting, for example:
+      #   NOATINWORK_UI_PASSWORD="$(openssl rand -base64 24)" docker compose up -d
+      NOATINWORK_UI_PASSWORD: ${NOATINWORK_UI_PASSWORD:?Set NOATINWORK_UI_PASSWORD before exposing NoatinWork through Docker}
+    # NOATINWORK_HOST: 0.0.0.0  # Bind address (default in Docker entrypoint: 0.0.0.0)
+    # NOATINWORK_TUNNEL_PROVIDER: cloudflare
+    # NOATINWORK_TUNNEL_MODE: quick  # quick | managed-remote | managed-local
+    # NOATINWORK_TUNNEL_HOSTNAME: app.example.com  # required for managed-remote
+    # NOATINWORK_TUNNEL_TOKEN: your_cloudflare_token  # required for managed-remote
+    # NOATINWORK_TUNNEL_CONFIG: /home/noatinwork/.cloudflared/config.yml  # optional for managed-local
+    # OH_MY_OPENCODE: true # enable oh-my-opencode
+    # OPENCODE_HOST: http://172.17.0.1:4096 # Connect to external OpenCode server
+    # OPENCODE_SKIP_START: true # skip start opencode
+    # NOATINWORK_OPENCODE_HOSTNAME: 0.0.0.0 # Bind OpenCode to all interfaces
+    restart: unless-stopped

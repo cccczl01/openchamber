@@ -1,0 +1,40 @@
+{
+  "description": "§3 file deletion: i18n languages + contribution files + repro/changelog-card",
+  "plan_section": "§3",
+  "reason": "Delete 9 i18n languages (keep en+zh-CN), 8 docs lang dirs, contribution flow, repro/changelog-card per REBRAND_PLAN §1",
+  "files": [
+    "packages/ui/src/lib/i18n/messages/de.ts",
+    "packages/ui/src/lib/i18n/messages/de.settings.ts",
+    "packages/ui/src/lib/i18n/messages/es.ts",
+    "packages/ui/src/lib/i18n/messages/es.settings.ts",
+    "packages/ui/src/lib/i18n/messages/fr.ts",
+    "packages/ui/src/lib/i18n/messages/fr.settings.ts",
+    "packages/ui/src/lib/i18n/messages/ja.ts",
+    "packages/ui/src/lib/i18n/messages/ja.settings.ts",
+    "packages/ui/src/lib/i18n/messages/ko.ts",
+    "packages/ui/src/lib/i18n/messages/ko.settings.ts",
+    "packages/ui/src/lib/i18n/messages/pl.ts",
+    "packages/ui/src/lib/i18n/messages/pl.settings.ts",
+    "packages/ui/src/lib/i18n/messages/pt-BR.ts",
+    "packages/ui/src/lib/i18n/messages/pt-BR.settings.ts",
+    "packages/ui/src/lib/i18n/messages/uk.ts",
+    "packages/ui/src/lib/i18n/messages/uk.settings.ts",
+    "packages/ui/src/lib/i18n/messages/zh-TW.ts",
+    "packages/ui/src/lib/i18n/messages/zh-TW.settings.ts",
+    "CONTRIBUTING.md",
+    "packages/docs/CONTRIBUTING.md",
+    ".github/CODEOWNERS"
+  ],
+  "dirs": [
+    "packages/docs/content/docs/de",
+    "packages/docs/content/docs/es",
+    "packages/docs/content/docs/fr",
+    "packages/docs/content/docs/ja",
+    "packages/docs/content/docs/ko",
+    "packages/docs/content/docs/pl",
+    "packages/docs/content/docs/pt-br",
+    "packages/docs/content/docs/uk",
+    "scripts/repro",
+    "scripts/changelog-card"
+  ]
+}

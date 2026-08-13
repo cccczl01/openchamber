@@ -1,0 +1,254 @@
+{
+  "name": "noatinwork",
+  "displayName": "NoatinWork",
+  "description": "%extension.description%",
+  "version": "1.18.2",
+  "publisher": "noatinwork",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccccczl01/noatinwork.git"
+  },
+  "qna": "https://discord.gg/ZYRSdnwwKA",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Machine Learning",
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "claude",
+    "gpt",
+    "agent",
+    "coding",
+    "chatgpt",
+    "groq",
+    "assistant",
+    "opencode",
+    "noatinwork"
+  ],
+  "icon": "assets/app-icon.png",
+  "main": "./dist/extension.js",
+  "l10n": "./l10n",
+  "activationEvents": [
+    "onCommand:noatinwork.openSidebar",
+    "onCommand:noatinwork.attachExplorerToChat",
+    "onView:noatinwork.chatView"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "noatinwork",
+          "title": "NoatinWork",
+          "icon": "assets/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "noatinwork": [
+        {
+          "type": "webview",
+          "id": "noatinwork.chatView",
+          "name": "%views.chat.name%"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "noatinwork.openSidebar",
+        "category": "NoatinWork",
+        "title": "%command.openSidebar.title%",
+        "icon": {
+          "light": "assets/icon.svg",
+          "dark": "assets/icon-titlebar.svg"
+        }
+      },
+      {
+        "command": "noatinwork.focusChat",
+        "category": "NoatinWork",
+        "title": "%command.focusChat.title%"
+      },
+      {
+        "command": "noatinwork.restartApi",
+        "category": "NoatinWork",
+        "title": "%command.restartApi.title%"
+      },
+      {
+        "command": "noatinwork.showOpenCodeStatus",
+        "category": "NoatinWork",
+        "title": "%command.showOpenCodeStatus.title%"
+      },
+      {
+        "command": "noatinwork.openAgentManager",
+        "category": "NoatinWork",
+        "title": "%command.openAgentManager.title%",
+        "icon": "$(circuit-board)"
+      },
+      {
+        "command": "noatinwork.openActiveSessionInEditor",
+        "category": "NoatinWork",
+        "title": "%command.openActiveSessionInEditor.title%",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "noatinwork.openNewSessionInEditor",
+        "category": "NoatinWork",
+        "title": "%command.openNewSessionInEditor.title%",
+        "icon": {
+          "light": "assets/icon.svg",
+          "dark": "assets/icon-titlebar.svg"
+        }
+      },
+      {
+        "command": "noatinwork.openCurrentOrNewSessionInEditor",
+        "category": "NoatinWork",
+        "title": "%command.openCurrentOrNewSessionInEditor.title%",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "noatinwork.addToContext",
+        "category": "NoatinWork",
+        "title": "%command.addToContext.title%"
+      },
+      {
+        "command": "noatinwork.explain",
+        "category": "NoatinWork",
+        "title": "%command.explain.title%"
+      },
+      {
+        "command": "noatinwork.improveCode",
+        "category": "NoatinWork",
+        "title": "%command.improveCode.title%"
+      },
+      {
+        "command": "noatinwork.newSession",
+        "category": "NoatinWork",
+        "title": "%command.newSession.title%",
+        "icon": "$(add)"
+      },
+      {
+        "command": "noatinwork.showSettings",
+        "category": "NoatinWork",
+        "title": "%command.showSettings.title%",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "noatinwork.attachExplorerToChat",
+        "category": "NoatinWork",
+        "title": "%command.attachExplorerToChat.title%"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "noatinwork.submenu",
+        "label": "NoatinWork"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "noatinwork.submenu",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "noatinwork.attachExplorerToChat",
+          "when": "resourceScheme == file && explorerResourceIsFolder == false",
+          "group": "navigation@50"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "noatinwork.openNewSessionInEditor",
+          "group": "navigation@1"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "noatinwork.newSession",
+          "when": "view == noatinwork.chatView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "noatinwork.openCurrentOrNewSessionInEditor",
+          "when": "view == noatinwork.chatView",
+          "group": "navigation@2"
+        },
+        {
+          "command": "noatinwork.openAgentManager",
+          "when": "view == noatinwork.chatView",
+          "group": "navigation@3"
+        },
+        {
+          "command": "noatinwork.showSettings",
+          "when": "view == noatinwork.chatView",
+          "group": "navigation@4"
+        }
+      ],
+      "noatinwork.submenu": [
+        {
+          "command": "noatinwork.explain"
+        },
+        {
+          "command": "noatinwork.improveCode"
+        },
+        {
+          "command": "noatinwork.addToContext"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "NoatinWork",
+      "properties": {
+        "noatinwork.apiUrl": {
+          "type": "string",
+          "default": "",
+          "description": "%configuration.apiUrl.description%"
+        },
+        "noatinwork.opencodeBinary": {
+          "type": "string",
+          "default": "",
+          "description": "%configuration.opencodeBinary.description%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "bun run build",
+    "build": "bun run build:extension && bun run build:webview",
+    "build:extension": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify --main-fields=module,main",
+    "build:webview": "VITE_OPENCODE_URL=/api vite build",
+    "dev": "concurrently -n \"ext,web\" -c \"cyan,magenta\" \"bun run watch:extension\" \"bun run dev:webview\"",
+    "dev:webview": "vite --host localhost --port 5173 --strictPort",
+    "watch:extension": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch --sourcemap --main-fields=module,main",
+    "watch:webview": "vite build --watch",
+    "type-check": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.webview.json",
+    "lint": "bun x eslint --ext .ts,.tsx src webview",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/vscode": "^1.85.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@vscode/vsce": "^3.2.1",
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.28.0",
+    "typescript": "~5.9.0",
+    "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "@noatinwork-app/ui": "workspace:*",
+    "@opencode-ai/sdk": "1.18.16",
+    "adm-zip": "^0.6.0",
+    "jsonc-parser": "^3.3.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "yaml": "^2.8.1"
+  }
+}
