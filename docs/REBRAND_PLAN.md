@@ -138,12 +138,12 @@
 3. ✅ i18n 删语言 + 品牌词替换：**UI 消息包删 9 种**（de、es、fr、ja、ko、pl、pt-BR、uk、zh-TW，留 en + zh-CN）、**docs 删 8 个语言子目录**（见 §1 语言行与步骤 5）；保留面（根英文 + zh-CN、UI 的 en/zh-CN）内做品牌词替换 — §3 完成 (385 文件删除, i18n 系统收敛为 en+zh-CN)
 4. ✅ CI 裁剪与发布链改造（需先备好 secrets）+ 新增上游检测 job — CI/bot/skill 品牌硬编码替换完成 (39 文件, 141 行)；scan.mjs 修复 --hidden
 5. ✅ 文档裁切（删 8 个语言子目录 `de/ es/ fr/ ja/ ko/ pl/ pt-br/ uk/`，保留根英文 + `zh-cn/`——见 §1 语言行结构说明）— §3 完成
-6. ✅ 全仓 `rg -i openchamber` 归零验证通过 → 仓库重初始化即将执行（单初始 commit push）— 最终归零验证：10 个合法保留文件（CHANGELOG 历史、GitHub issue 引用 `openchamber#2577`、品牌替换工具本身），unaccounted=0；`bun.lock` workspace name stale 残留已修复（commit `a8dbd6c3c`）
+6. ✅ 全仓 `rg -i openchamber` 归零验证通过 → 仓库重初始化完成（单初始 commit `f539329` push）— 最终归零验证：git 历史 0 残留，工作区 10 个合法保留文件（CHANGELOG 历史、GitHub issue 引用 `openchamber#2577`、品牌替换工具本身），unaccounted=0；`bun.lock` workspace name stale 残留已修复（commit `a8dbd6c3c`，重初始化前）
 
 ### 4.1 远端与目录名处理（随第 6 步一并执行）
 
 - ✅ GitHub 远端仓库已重命名为 `noatinwork`（`gh repo rename noatinwork --repo cccczl01/openchamber`），本地 `git remote set-url origin` 已更新
-- ⏳ 仓库重初始化（原地 `rm -rf .git` + `git init` + 单初始 commit + `git push -f origin main`）— 破坏性操作，用户手动执行，逐步确认；执行后 git 历史中的 openchamber 残留将全部消除
+- ✅ 仓库重初始化完成（原地 `rm -rf .git` + `git init --initial-branch=main` + 单初始 commit `f539329 Initial commit: NoatinWork` + `git push -f origin main`）— 破坏性操作已执行；git 历史中的 openchamber 残留已全部消除，远程 `origin/main` = `f539329`
 - 重新配置远端：`origin` → `github.com/cccczl01/noatinwork.git`、`upstream` → `https://github.com/openchamber/openchamber.git`（合并策略所需，保持不动）
 - ✅ 远端现状：`origin` = `github.com/cccczl01/noatinwork.git`，`upstream` = `github.com/openchamber/openchamber.git`（保持不动）；仓库内无对 fork 账号的引用
 
